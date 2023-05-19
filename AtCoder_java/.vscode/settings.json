@@ -1,0 +1,10 @@
+{
+    "java.project.sourcePaths": [
+        "src/典型90問",
+        "src/ABC_299"
+    ],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar"
+    ]
+}

@@ -5,21 +5,25 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Bash on Windows の起動",
+            "type": "java",
+            "name": "E",
+            "request": "launch",
+            "mainClass": "E",
+            "projectName": "AtCorder_b368cc64"
+        },
+        {
+            "name": "(gdb) 起動",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/D.exe)",
+            "preLaunchTask": "g++.exe build active file",
+            "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
-            "externalConsole": false,
-            "pipeTransport": {
-                "debuggerPath": "/usr/bin/gdb",
-                "pipeProgram": "${env:windir}\\system32\\bash.exe",
-                "pipeArgs": ["-c"],
-                "pipeCwd": ""
-            },
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:/MinGW/bin/gdb.exe",
             "setupCommands": [
                 {
                     "description": "gdb の再フォーマットを有効にする",
@@ -33,6 +37,5 @@
                 }
             ]
         }
-
     ]
 }
