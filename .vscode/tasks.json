@@ -3,13 +3,13 @@
         {
             "type": "cppbuild",
             "label": "g++.exe build active file",
-            "command": "C:\\MinGW\\bin\\gcc.exe",
+            "command": "C:/Add/MinGW/bin/gcc.exe",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "${fileDirname}/${fileBasenameNoExtension}.exe",
                 "-lstdc++"
             ],
             "options": {
