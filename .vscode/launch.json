@@ -5,25 +5,19 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "java",
-            "name": "E",
-            "request": "launch",
-            "mainClass": "E",
-            "projectName": "AtCorder_b368cc64"
-        },
-        {
             "name": "(gdb) 起動",
             "type": "cppdbg",
             "request": "launch",
-            "preLaunchTask": "g++.exe build active file",
-            "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
+            "preLaunchTask": "c++ build for container",
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
-            "miDebuggerPath": "C:/Add/MinGW/bin/gdb.exe",
+            // "miDebuggerPath": "C:/Add/MinGW/bin/gdb.exe",
+            "miDebuggerPath": "/usr/bin/gdb",
             "setupCommands": [
                 {
                     "description": "gdb の再フォーマットを有効にする",
