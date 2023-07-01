@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define vv vector<vector
  
 bool chmax(int& bef,int aft){
     if (aft > bef){
@@ -21,19 +22,19 @@ int main(){
         cin >> a[i] >> b[i] >> c[i];
     }
  
-    vector<int> dp(3,0);
+    vv<int>> dp(N,vector<int>(3,0));
+    dp[0][0] = a[0];
+    dp[0][1] = b[0];
+    dp[0][2] = c[0];
     char prev_char;
     char temp_char;
-    for (int i=0;i<N;i++){
-        chmax(dp[0],dp[0] + b[i]); //直前がa
-        chmax(dp[0],dp[0] + c[i]);
+    for (int i=1;i<N;i++){
+        chmax(dp[i][0],max(dp[i-1][1] + a[i],dp[i-1][2] + a[i])); //a
 
-        chmax(dp[1],dp[1] + a[i]); //直前がb
-        chmax(dp[1],dp[1] + c[i]);
+        chmax(dp[i][1],max(dp[i-1][0] + b[i],dp[i-1][2] + b[i])); //b
 
-        chmax(dp[2],dp[2] + a[i]); //直前がc
-        chmax(dp[2],dp[2] + b[i]);
+        chmax(dp[i][2],max(dp[i-1][0] + c[i],dp[i-1][1] + c[i])); //c
     }
-    cout << max(dp[0],dp[1],dp[2]);
+    cout << max({dp[N-1][0],dp[N-1][1],dp[N-1][2]});
     return 0;
 }
